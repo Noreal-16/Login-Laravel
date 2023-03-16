@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('content')
+@include('layout.partials.mesajes')
    @auth
        <p>Bienvenido {{auth()->user()->name ?? auth()->user()->username }} estas autenticado</p>
    @endauth
