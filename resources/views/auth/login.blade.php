@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-</head>
-<body>
+@extends('layout.master')
+
+
+@section('content')
     <form action="/login" method="POST">
         @csrf
-        
-        <label >email</label>
-        <input type="text" name="username" id="">
-        <label >password</label>
-        <input type="password" name="password" id="">
-        <button type="submit"> Login</button>
+        @include('layout.partials.mesajes')
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email or username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="name@example.com or Username">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="********">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Login</button>
+            <a  href="/register" class="btn btn-danger mb-3">Register</a>
+          </div>
     </form>
-
-</body>
-</html>
+@endsection
